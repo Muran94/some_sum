@@ -23,6 +23,11 @@ class SomeSumMethodsTests(unittest.TestCase):
         # 異常系
         ### 引数の取るべき値がおかしい場合
         self.assertEqual(main.sum_3(1, 10), "引数の値がおかしい")
+        self.assertEqual(main.sum_3(10, 10), "引数の値がおかしい")
+
+    def test_sum_4(self):
+        self.assertEqual(main.sum_4(10), 55)
+        self.assertEqual(main.sum_4(15), 120)
 
 if __name__ == "__main__":
     unittest.main()

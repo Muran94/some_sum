@@ -1,19 +1,17 @@
-import numpy as np
-
-def sum_1(stop):
+def sum_1(num):
     """
-    for文を用いて、1からstopまでの総和を求める
+    for文を用いて、1からnumまでの総和を求める
     """
     sum_value = 0
-    for i in range(1, stop + 1):
+    for i in range(1, num + 1):
         sum_value += i
     return sum_value
 
-def sum_2(stop):
+def sum_2(num):
     """
-    等差数列の和の公式を用いて、1からstopまでの総和を求める
+    公式を用いて、1からnumまでの総和を求める
     """
-    return (stop * (stop + 1)) / 2
+    return (num * (num + 1)) / 2
 
 def sum_3(stop, start = 1):
     if stop <= start:
@@ -24,3 +22,9 @@ def sum_3(stop, start = 1):
         sum_value += i
 
     return sum_value
+
+def sum_4(num):
+    """
+    再帰関数を用いて、1からnumまでの総和を求める
+    """
+    return num + sum_4(num - 1) if num > 0 else 0
